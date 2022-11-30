@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string>
 #include "Date.h"
 #include "Bedroom.h"
 #include "Client.h"
@@ -13,11 +14,12 @@ private:
   int _nightNbr;
   //total price of the reservation
   float _totalPrice;
+  std::string _city, _hotelName;
   Bedroom& _number;
   Hotel& _idHotel;
   Client& _idClient;
   
 public:
-  Reservation();
+  Reservation(Date start, int nightNbr, std::string city, std::string hotelName);
 
 };
