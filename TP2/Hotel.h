@@ -5,7 +5,8 @@
 
 class Hotel {
 private:
-  std::string _name, _id, _city;
+  std::string _name, _idHotel, _city;
+  int _roomNumber //number of rooms in the Hotel
   std::vector<int> _rooms;
 
 public:
