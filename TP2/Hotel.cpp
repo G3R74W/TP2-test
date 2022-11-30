@@ -1,9 +1,11 @@
 #include "Hotel.h"
 
-Hotel::Hotel(std::string name, std::string city, std::string roomNumber){
-  _name = name;
-  _city = city;
-  _idHotel = _name[0] + _city[0] + roomNumber[0];
+Hotel::Hotel(std::string name, std::string city, std::string roomNumber) : _name(name), _city(city), _roomNumber(roomNumber){
+  _idHotel = _name+_city+_roomNumber;
+  int nbr = stoi(_roomNumber);
+  for(int i = 0; i<nbr; i++){
+    _rooms[i] = 0;
+  }
 }
 
 std::string Hotel::getID(){
