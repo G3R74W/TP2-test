@@ -1,5 +1,5 @@
 #include "Reservation.h"
 
-Reservation::Reservation(Date start, int nightNbr, std::string city, std::string hotelName) : _start(start), _nightNbr(nightNbr), _city(city), _hotelName(hotelName){
+Reservation::Reservation(Date start, int nightNbr, Hotel htl, Client touriste):_start(start), _nightNbr(nightNbr), _htl(htl), _touriste(touriste){
   
 }

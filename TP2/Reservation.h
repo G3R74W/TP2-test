@@ -15,11 +15,11 @@ private:
   //total price of the reservation
   float _totalPrice;
   std::string _city, _hotelName;
-  Bedroom& _number;
-  Hotel& _idHotel;
-  Client& _idClient;
+  Bedroom bdroom;
+  Hotel _htl;
+  Client _touriste;
   
 public:
-  Reservation(Date start, int nightNbr, std::string city, std::string hotelName);
+  Reservation(Date start, int nightNbr, Hotel htl, Client touriste);
 
 };
