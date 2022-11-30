@@ -2,15 +2,17 @@
 #include <iostream>
 #include <string>
 
+
 class Bedroom
 {
 private :
 	int _number;
 	std::string _type;
-	float _price;
+	int _price;
 	bool _reserve;
 
 public :
-	Bedroom();
+	Bedroom(std::string type, int test);
+	int get_number();
 };
 
