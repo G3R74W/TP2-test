@@ -11,7 +11,7 @@
 
 
 Date::Date(int month, int day, int year) : _month(month), _day(day), _year(year) {
-    bool status = isDate(month, day);
+    bool status = isDate(month, day, year);
     assert(status && "Date is not valid");
 }
 
@@ -28,13 +28,13 @@ int Date::year() const {
 }
 
 void Date::updateMonth(int month) {
-    bool status = isDate(month, _day);
+    bool status = isDate(month, _day, _year);
     assert(status == true && "New month is not valid");
     _month = month;
 }
 
 void Date::updateDay(int day) {
-    bool status = isDate(_month, day);
+    bool status = isDate(_month, day, _year);
     assert(status == true && "New day is not valid");
     _day = day;
 }
@@ -75,7 +75,8 @@ void Date::back() {
  *
 */
 
-bool isDate(int month, int day) {
+bool isDate(int month, int day, int year) {
+    if ((year < 2022) || (year > 2050)) return false;
     if ((day < 1) || (day > 31)) return false;
     if ((month < 1) || (month > 12)) return false;
     if ((month == 2) && (day > 28)) return false;
