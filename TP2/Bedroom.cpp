@@ -10,7 +10,7 @@ Bedroom::Bedroom(std::string type, Hotel &h):_type(type), _reserve(false), _pric
 	else if (type == "Suite") {
 		_price = 1200;
 	}
-	_number = h.room() + 1; // Permet de donner le premier numéro de chambre non attribuée
+	_number = h.room() + 1; // Permet de donner le premier numï¿½ro de chambre non attribuï¿½e
 }
 
 Bedroom::~Bedroom() {
@@ -23,4 +23,9 @@ int Bedroom::get_number() {
 
 void Bedroom::edit_price(int price) { // permet de modifier le prix d'une chambre (setter)
 	_price = price;
+}
+
+
+int Bedroom::getPrice(){
+  return _price;
 }

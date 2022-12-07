@@ -17,5 +17,6 @@ public :
 	~Bedroom();
 	int get_number();
 	void edit_price(int price);
+  int getPrice();
 };
 
