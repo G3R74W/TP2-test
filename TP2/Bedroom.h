@@ -9,7 +9,7 @@ private:
 	int _number;
 	std::string _type;
 	int _price;
-	bool _reserve;
+	bool _reserve; // ajouter le fait de voir à quelle date la chambre est occupe/dispo
 
 public:
 	Bedroom(std::string type, int number);

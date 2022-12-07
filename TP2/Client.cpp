@@ -7,6 +7,10 @@ std::string Client::get_id_client() {
 	return _id_client;
 }
 
+std::string Client::get_lastname() {
+	return _lastname;
+}
+
 std::ostream& operator<<(std::ostream& os, const Client& c){
   os << "----------------------";
   os << "\n";
