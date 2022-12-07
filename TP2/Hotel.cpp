@@ -33,7 +33,7 @@ void Hotel::display_info_bedroom() {
     }
 }
 
-std::ostream&o operator<<(std::ostream &os, const Hotel &h){
+std::ostream& operator<<(std::ostream &os, const Hotel &h){
   os << "----------------------";
   os << "\n";
   
@@ -55,4 +55,5 @@ std::ostream&o operator<<(std::ostream &os, const Hotel &h){
 
   os << "----------------------";
   os << "\n"; 
+  return os;
 }
