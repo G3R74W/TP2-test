@@ -2,19 +2,19 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Bedroom.h"
 
 class Hotel {
 private:
   std::string _name, _idHotel, _city;
   int _roomNumber; //number of rooms in the Hotel
-  std::vector<int> _rooms;
+  std::vector<Bedroom> _rooms;
 
 public:
   Hotel(std::string name, std::string city, std::string roomNumber);
   std::string getID();
-  int room(std::string type);
-  void create_room();
-  void delete_room();
+  void create_room(std::string type);
+  void delete_room(int number);
   int get_roomNumber();
 
 };

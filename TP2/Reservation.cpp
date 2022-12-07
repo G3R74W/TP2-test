@@ -6,7 +6,7 @@ Reservation::Reservation(Date start, int nightNbr, Hotel htl, Client touriste,
     : _start(start), _nightNbr(nightNbr), _htl(htl), _touriste(touriste),
       _bdroom(bdroom) {
   // works out the total price of the reservation
-  int price = _bdroom.getPrice();
+  int price = _bdroom.get_price();
   _totalPrice = _nightNbr * price;
 }
 
@@ -30,6 +30,6 @@ void Reservation::chngeNightNbr(int nightNbr) { _nightNbr = nightNbr; }
 void Reservation::setNewDate(Date newStart) { _start = newStart; }
 
 void Reservation::price() {
-  int price = _bdroom.getPrice();
+  int price = _bdroom.get_price();
   _totalPrice = _nightNbr * price;
 }

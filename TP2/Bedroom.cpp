@@ -1,6 +1,6 @@
 #include "Bedroom.h"
 
-Bedroom::Bedroom(std::string type, Hotel h):_type(type), _reserve(false), _price(0), _number(0) {
+Bedroom::Bedroom(std::string type, int number):_type(type), _reserve(false), _price(0), _number(0) {
 	if (type == "Double") {
 		_price = 360;
 	}
@@ -10,7 +10,7 @@ Bedroom::Bedroom(std::string type, Hotel h):_type(type), _reserve(false), _price
 	else if (type == "Suite") {
 		_price = 1200;
 	}
-	_number = h.room(_type) + 1; // Permet de donner le premier numéro de chambre non attribuée
+	_number = number + 1; // Permet de donner le premier numéro de chambre non attribuée
 }
 
 Bedroom::~Bedroom() {
