@@ -12,5 +12,6 @@ private :
 public :
 	Client(std::string lastname, std::string firstname);
 	std::string get_id_client();
+  friend std::ostream& operator<<(std::ostream& os, const Client& c);
 };
 
