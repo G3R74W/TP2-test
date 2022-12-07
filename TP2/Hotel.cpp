@@ -26,3 +26,9 @@ void Hotel::delete_room(int number) {
 int Hotel::get_roomNumber() {
     return _roomNumber;
 }
+
+void Hotel::display_info_bedroom() {
+    for (int i = 0; i < _rooms.size(); i++) {
+        std::cout << _rooms[i];
+    }
+}
