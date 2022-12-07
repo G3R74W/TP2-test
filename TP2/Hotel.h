@@ -17,4 +17,5 @@ public:
   void delete_room(int number);
   int get_roomNumber();
   void display_info_bedroom();
+  friend std::ostream& operator<<(std::ostream &os, const Hotel &h);
 };

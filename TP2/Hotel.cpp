@@ -32,3 +32,27 @@ void Hotel::display_info_bedroom() {
         std::cout << _rooms[i];
     }
 }
+
+std::ostream&o operator<<(std::ostream &os, const Hotel &h){
+  os << "----------------------";
+  os << "\n";
+  
+  os << "Hotel Name :";
+  os << h._name;
+  os << "\n";
+
+  os << "Hotel ID :";
+  os << h._idHotel;
+  os << "\n";
+
+  os << "Location :";
+  os << h._city;
+  os << "\n";
+
+  os << "Total number of rooms :";
+  os << h._roomNumber;
+  os << "\n";
+
+  os << "----------------------";
+  os << "\n"; 
+}
