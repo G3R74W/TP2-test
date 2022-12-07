@@ -6,17 +6,16 @@
 
 class Bedroom
 {
-private :
+private:
 	int _number;
 	std::string _type;
 	int _price;
 	bool _reserve;
 
-public :
-	Bedroom(std::string type, Hotel &h);
+public:
+	Bedroom(std::string type, Hotel h);
 	~Bedroom();
 	int get_number();
 	void edit_price(int price);
-  int getPrice();
+	int get_price();
 };
-

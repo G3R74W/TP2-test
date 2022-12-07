@@ -12,5 +12,9 @@ private:
 public:
   Hotel(std::string name, std::string city, std::string roomNumber);
   std::string getID();
-  int room();
+  int room(std::string type);
+  void create_room();
+  void delete_room();
+  int get_roomNumber();
+
 };
