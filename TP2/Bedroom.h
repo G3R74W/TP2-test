@@ -18,4 +18,5 @@ public:
 	int get_number();
 	void edit_price(int price);
 	int get_price();
+  friend std::ostream &operator<<(std::ostream &os, const Bedroom &b);
 };
