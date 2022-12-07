@@ -10,7 +10,7 @@ Bedroom::Bedroom(std::string type, int test):_type(type), _reserve(false), _pric
 	else if (type == "Suite") {
 		_price = 1200;
 	}
-	_number = test + 1; // Permet de donner le premier numéro de chambre non attribuée
+	_number = test + 1; // Permet de donner le premier numero de chambre non attribuee
 }
 
 int Bedroom::get_number() {
