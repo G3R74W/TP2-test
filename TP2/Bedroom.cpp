@@ -1,33 +1,34 @@
 #include "Bedroom.h"
 
-Bedroom::Bedroom(std::string type, int number):_type(type), _reserve(false), _price(0), _number(0) {
-	if (type == "Double") {
-		_price = 360;
-	}
-	else if (type == "Simple") {
-		_price = 160;
-	}
-	else if (type == "Suite") {
-		_price = 1200;
-	}
-	_number = number + 1; // Permet de donner le premier numéro de chambre non attribue e
+Bedroom::Bedroom(std::string type, int number)
+    : _type(type), _reserve(false), _price(0), _number(0) {
+  if (type == "Double") {
+    _price = 360;
+  } else if (type == "Simple") {
+    _price = 160;
+  } else if (type == "Suite") {
+    _price = 1200;
+  }
+  _number = number +
+            1; // Permet de donner le premier numero de chambre non attribueee
 }
 
-Bedroom::~Bedroom() {
+Bedroom::~Bedroom() {}
 
+std::vector<Date> Bedroom::get_reserve() { return _reserve; }
+
+int Bedroom::get_number() { return _number; }
+
+void Bedroom::edit_price(
+    int price) { // permet de modifier le prix d'une chambre (setter)
+  _price = price;
 }
 
-int Bedroom::get_number() {
-	return _number;
-}
+int Bedroom::get_price() { return _price; }
 
-void Bedroom::edit_price(int price) { // permet de modifier le prix d'une chambre (setter)
-	_price = price;
-}
+std::string Bedroom::get_type() { return _type; }
 
-int Bedroom::get_price() {
-	return _price;
-}
+void Bedroom::reserve(Date a) { _reserve.push_back(a); }
 
 std::ostream &operator<<(std::ostream &os, const Bedroom &b) {
   std::string stat;
@@ -45,14 +46,6 @@ std::ostream &operator<<(std::ostream &os, const Bedroom &b) {
   os << b._price;
   os << "\n";
 
-  os << "Status :";
-  if (b._reserve == true) {
-    stat = "reserved";
-  } else {
-    stat = "free";
-  }
-  os << stat;
-  os << "\n";
   os << "----------------------";
   os << "\n";
   return os;

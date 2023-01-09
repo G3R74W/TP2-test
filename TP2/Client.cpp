@@ -1,17 +1,14 @@
 #include "Client.h"
 
-Client::Client(std::string lastname, std::string firstname) :_lastname(lastname), _firstname(firstname) {
-	_id_client = firstname[0]+lastname;
+Client::Client(std::string lastname, std::string firstname)
+    : _lastname(lastname), _firstname(firstname) {
+  _id_client = firstname[0] + lastname;
 }
-std::string Client::get_id_client() {
-	return _id_client;
-}
+std::string Client::get_id_client() { return _id_client; }
 
-std::string Client::get_lastname() {
-	return _lastname;
-}
+std::string Client::get_lastname() { return _lastname; }
 
-std::ostream& operator<<(std::ostream& os, const Client& c){
+std::ostream &operator<<(std::ostream &os, const Client &c) {
   os << "----------------------";
   os << "\n";
 
@@ -26,7 +23,7 @@ std::ostream& operator<<(std::ostream& os, const Client& c){
   os << "Client's ID :";
   os << c._id_client;
   os << "\n";
-  
+
   os << "----------------------";
   os << "\n";
   return os;

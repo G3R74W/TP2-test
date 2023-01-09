@@ -1,42 +1,43 @@
 #include "Hotel.h"
 
-Hotel::Hotel(std::string name, std::string city, std::string roomNumber) : _name(name), _city(city){
-  _idHotel = _name+_city+roomNumber;
+Hotel::Hotel(std::string name, std::string city, std::string roomNumber)
+    : _name(name), _city(city) {
+  _idHotel = _name + _city + roomNumber;
   _roomNumber = stoi(roomNumber);
 }
 
-std::string Hotel::getID(){
-  return _idHotel;
-}
+std::string Hotel::getID() { return _idHotel; }
+
+std::vector<Bedroom> Hotel::get_room() { return _rooms; }
 
 void Hotel::create_room(std::string type) {
-    int i = _rooms.size();
-    if (i > _roomNumber) {
-        _roomNumber++;
-    }
-    Bedroom c(type, i);
-    _rooms.push_back(c);
+  int i = _rooms.size();
+  if (i > _roomNumber) {
+    _roomNumber++;
+  }
+  Bedroom c(type, i);
+  _rooms.push_back(c);
 }
 
 void Hotel::delete_room(int number) {
-    //remove(_rooms.begin(), _rooms.end(), _rooms[number-1]);
-    //_rooms.resize(_rooms.size() - 1);
+  // remove(_rooms.begin(), _rooms.end(), _rooms[number-1]);
+  //_rooms.resize(_rooms.size() - 1);
 }
 
-int Hotel::get_roomNumber() {
-    return _roomNumber;
-}
+int Hotel::get_roomNumber() { return _roomNumber; }
 
 void Hotel::display_info_bedroom() {
-    for (int i = 0; i < _rooms.size(); i++) {
-        std::cout << _rooms[i];
-    }
+  for (int i = 0; i < _rooms.size(); i++) {
+    std::cout << _rooms[i];
+  }
 }
 
-std::ostream& operator<<(std::ostream &os, const Hotel &h){
+void Hotel::set_room(std::vector<Bedroom> rooms) { _rooms = rooms; }
+
+std::ostream &operator<<(std::ostream &os, const Hotel &h) {
   os << "----------------------";
   os << "\n";
-  
+
   os << "Hotel Name :";
   os << h._name;
   os << "\n";
@@ -54,6 +55,6 @@ std::ostream& operator<<(std::ostream &os, const Hotel &h){
   os << "\n";
 
   os << "----------------------";
-  os << "\n"; 
+  os << "\n";
   return os;
 }
