@@ -81,6 +81,7 @@ bool liste_reserv(std::vector<Reservation> &list, Hotel &h,
     }
   }
   if (a == -1) {
+    // on cree la liste des clients
     liste(1, list_client);
     for (int i = 0; i < list_client.size(); i++) {
       if (list_client[i].get_lastname() == lastname) {
