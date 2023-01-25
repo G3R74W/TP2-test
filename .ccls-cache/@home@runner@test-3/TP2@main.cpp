@@ -174,9 +174,6 @@ void modif_reserv(std::vector<Reservation> &listReserv, std::string rsvLastname,
   // permet de modifier une reservation
   std::vector<int> save =
       look_for_reserv(rsvFirstname, rsvLastname, listReserv);
-  for (int h = 0; h < save.size(); h++) {
-    std::cout << save[h] << std::endl;
-  }
   std::cout << " Entrez le numéro de réservation" << std::endl;
   int number_reserv;
   int entrer;
